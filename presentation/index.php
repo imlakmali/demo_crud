@@ -36,6 +36,7 @@ if (mysqli_num_rows($result) > 0) {
             <th class='px-4 py-2'>DOB</th>
             <th class='px-4 py-2'>Gender</th>
             <th class='px-4 py-2'>Address</th>
+            <th class='px-4 py-2'>Actions</th>
           </tr>";
 
     // Table Data
@@ -48,6 +49,10 @@ if (mysqli_num_rows($result) > 0) {
                 <td class='px-4 py-2'>" . $row['date_of_birth'] . "</td>
                 <td class='px-4 py-2'>" . $row['gender'] . "</td>
                 <td class='px-4 py-2'>" . $row['address'] . "</td>
+                <td class='px-4 py-2'>
+                    <a href='edit_student.php?id=" . $row['id'] . "' class='text-blue-500 hover:text-blue-700'>Edit</a>
+                    <a href='../application/delete_student.php?id=" . $row['id'] . "' class='text-red-500 hover:text-red-700 ml-2'>Delete</a>
+                </td>
               </tr>";
     }
 
